@@ -1,9 +1,9 @@
-package com.estsoft.spring_project.abc.service;
+package com.estsoft.spring_project.crud.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import com.estsoft.spring_project.abc.repository.Member;
-import com.estsoft.spring_project.abc.repository.MemberRepository;
+import com.estsoft.spring_project.crud.repository.Member;
+import com.estsoft.spring_project.crud.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,6 @@
-package com.estsoft.spring_project.abc.controller;
+package com.estsoft.spring_project.crud.controller;
 
-import com.estsoft.spring_project.abc.service.HelloService;
+import com.estsoft.spring_project.crud.service.HelloService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,11 +1,9 @@
-package com.estsoft.spring_project.abc.repository;
+package com.estsoft.spring_project.crud.repository;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.sql.Timestamp;
 
 @Getter
 @Entity

@@ -1,4 +1,4 @@
-package com.estsoft.spring_project.abc.controller;
+package com.estsoft.spring_project.crud.controller;
 
 
 import org.springframework.stereotype.Controller;

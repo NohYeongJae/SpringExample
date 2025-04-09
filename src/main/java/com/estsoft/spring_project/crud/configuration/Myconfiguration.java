@@ -1,4 +1,4 @@
-package com.estsoft.spring_project.abc.configuration;
+package com.estsoft.spring_project.crud.configuration;
 
 
 import org.springframework.context.annotation.ComponentScan;

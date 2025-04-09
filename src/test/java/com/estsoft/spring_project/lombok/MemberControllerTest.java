@@ -1,7 +1,7 @@
 package com.estsoft.spring_project.lombok;
 
 
-import com.estsoft.spring_project.abc.repository.MemberRepository;
+import com.estsoft.spring_project.crud.repository.MemberRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

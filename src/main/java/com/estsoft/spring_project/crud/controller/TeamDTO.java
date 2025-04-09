@@ -1,7 +1,7 @@
-package com.estsoft.spring_project.abc.controller;
+package com.estsoft.spring_project.crud.controller;
 
 
-import com.estsoft.spring_project.abc.repository.Team;
+import com.estsoft.spring_project.crud.repository.Team;
 import lombok.Getter;
 
 @Getter

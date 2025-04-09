@@ -1,10 +1,9 @@
-package com.estsoft.spring_project.abc.controller;
+package com.estsoft.spring_project.crud.controller;
 
-import com.estsoft.spring_project.abc.repository.Member;
-import com.estsoft.spring_project.abc.repository.MemberRepository;
-import com.estsoft.spring_project.abc.service.MemberService;
+import com.estsoft.spring_project.crud.repository.Member;
+import com.estsoft.spring_project.crud.repository.MemberRepository;
+import com.estsoft.spring_project.crud.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
