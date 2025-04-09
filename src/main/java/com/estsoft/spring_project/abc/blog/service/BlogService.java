@@ -33,7 +33,7 @@ public class BlogService {
         return blogRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not exists id: " + id));
     }
 
-    public void deleteArticleById(Long id){
+    public void deleteArticle(Long id){
         blogRepository.deleteById(id);
     }
 
