@@ -4,6 +4,7 @@ package com.estsoft.spring_project.abc.blog.controller;
 import com.estsoft.spring_project.abc.blog.Article;
 import com.estsoft.spring_project.abc.blog.dto.AddArticleRequest;
 import com.estsoft.spring_project.abc.blog.dto.ArticleResponse;
+import com.estsoft.spring_project.abc.blog.dto.UpdateArticleRequest;
 import com.estsoft.spring_project.abc.blog.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,7 +24,7 @@ public class BlogController {
 
     // ResponseEntity
     @PostMapping("/api/articles")
-    public ResponseEntity<ArticleResponse> saveArticle(@RequestBody AddArticleRequest request){
+    public ResponseEntity<ArticleResponse> saveArticle(@RequestBody AddArticleRequest request) {
         Article savedArticle = blogService.saveArticle(request);
 
         // Article -> ArticleResponse 변환 후 리턴
@@ -33,7 +34,7 @@ public class BlogController {
     }
 
     @GetMapping("/api/articles")
-    public ResponseEntity<List<ArticleResponse>> findAllArticles(){
+    public ResponseEntity<List<ArticleResponse>> findAllArticles() {
         List<Article> articles = blogService.findArticles();
 
         List<ArticleResponse> responseBody = articles.stream().map(article -> new ArticleResponse(article.getId(), article.getTitle(), article.getContent()))
@@ -42,7 +43,31 @@ public class BlogController {
     }
 
     @GetMapping("/api/articles/{id}")
-    public Article findArticleById(@PathVariable("id") Long id){
-        return blogService.findArticleById(id);
+    public ResponseEntity<ArticleResponse> findArticleById(@PathVariable("id") Long id) {
+        Article article = blogService.findArticleById(id);
+        return ResponseEntity.ok(article.toDto());
     }
+
+    @DeleteMapping("/api/articles")
+    public ResponseEntity<Void> deleteArticleById() {
+        blogService.deleteArticleAll();
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<ArticleResponse> updateArticle(@PathVariable("id") Long id, @RequestBody UpdateArticleRequest request) {
+
+        Article article = blogService.updateArticle(id, request);
+
+        ArticleResponse response = article.toDto();
+        return ResponseEntity.ok(response);
+    }
+
+    // IllegalArgumentExeption 500 x -> 4xx
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handlerIllegalArgumentException(IllegalArgumentException e) {
+        return e.getMessage();
+    }
+
 }
