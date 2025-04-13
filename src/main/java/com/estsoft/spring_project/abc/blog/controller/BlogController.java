@@ -1,7 +1,7 @@
 package com.estsoft.spring_project.abc.blog.controller;
 
 
-import com.estsoft.spring_project.abc.blog.Article;
+import com.estsoft.spring_project.abc.blog.domain.Article;
 import com.estsoft.spring_project.abc.blog.dto.AddArticleRequest;
 import com.estsoft.spring_project.abc.blog.dto.ArticleResponse;
 import com.estsoft.spring_project.abc.blog.dto.UpdateArticleRequest;
@@ -69,6 +69,14 @@ public class BlogController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String handlerIllegalArgumentException(IllegalArgumentException e) {
         return e.getMessage();
+    }
+
+    @GetMapping("/api/articles/external")
+    public ResponseEntity<String> updateArticleByApi() {
+        // RestTemplate
+        blogService.updateArticleByApi();
+
+        return ResponseEntity.ok("외부 API 가져오기 성공");
     }
 
 }

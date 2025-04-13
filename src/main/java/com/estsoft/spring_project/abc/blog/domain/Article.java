@@ -1,4 +1,4 @@
-package com.estsoft.spring_project.abc.blog;
+package com.estsoft.spring_project.abc.blog.domain;
 
 import com.estsoft.spring_project.abc.blog.dto.ArticleResponse;
 import jakarta.persistence.*;
@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false)
+    @Column(name = "article_id",updatable = false)
     private Long id;
 
     @Column(nullable = false)

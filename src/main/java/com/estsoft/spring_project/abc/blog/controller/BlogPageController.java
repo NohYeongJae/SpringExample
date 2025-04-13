@@ -1,7 +1,7 @@
 package com.estsoft.spring_project.abc.blog.controller;
 
 
-import com.estsoft.spring_project.abc.blog.Article;
+import com.estsoft.spring_project.abc.blog.domain.Article;
 import com.estsoft.spring_project.abc.blog.dto.ArticleViewResponse;
 import com.estsoft.spring_project.abc.blog.service.BlogService;
 import org.springframework.stereotype.Controller;

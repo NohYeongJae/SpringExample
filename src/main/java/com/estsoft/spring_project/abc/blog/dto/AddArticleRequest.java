@@ -1,7 +1,8 @@
 package com.estsoft.spring_project.abc.blog.dto;
 
 
-import com.estsoft.spring_project.abc.blog.Article;
+import com.estsoft.spring_project.abc.blog.domain.Article;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AddArticleRequest {
     private String title;
+
+    @JsonProperty("body")
     private String content;
 
-    public Article toEntity(){
-        return Article.builder()
-                .title(title)
-                .content(content)
-                .build();
+    public Article toDTO(){
+        return new Article(title, content);
     }
 }

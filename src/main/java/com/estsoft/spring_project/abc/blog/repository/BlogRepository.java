@@ -1,6 +1,6 @@
 package com.estsoft.spring_project.abc.blog.repository;
 
-import com.estsoft.spring_project.abc.blog.Article;
+import com.estsoft.spring_project.abc.blog.domain.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
