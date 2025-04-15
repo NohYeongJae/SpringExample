@@ -29,7 +29,7 @@ public class BlogService {
     }
 
     public Article saveArticle(AddArticleRequest request) {
-        return blogRepository.save(request.toDTO());
+        return blogRepository.save(request.toEntity());
     }
 
     // 전체 목록 조회 코드

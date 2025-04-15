@@ -13,10 +13,12 @@ import lombok.NoArgsConstructor;
 public class AddArticleRequest {
     private String title;
 
-    @JsonProperty("body")
     private String content;
 
-    public Article toDTO(){
-        return new Article(title, content);
+    public Article toEntity() {
+        return Article.builder()
+                .title(title)
+                .content(content)
+                .build();
     }
 }
