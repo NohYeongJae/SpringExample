@@ -1,4 +1,4 @@
-package com.estsoft.spring_project.abc;
+package com.estsoft.spring_project.abc.configuration;
 
 import org.springframework.stereotype.Component;
 
